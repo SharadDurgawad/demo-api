@@ -3,9 +3,15 @@ pipeline {
 
     stages {
     
+        stage('Checkout Source code') {
+            steps {
+                echo 'Chekcking out source code..'
+            }
+        }
+        
         stage('Build Source') {
             steps {
-                echo 'Building..'
+                echo 'Building source code..'
             }
         }
         
@@ -17,25 +23,25 @@ pipeline {
         
         stage('Build Image') {
             steps {
-                echo 'Build Docker Image..'
+                echo 'Building Docker Image..'
             }
         }
         
         stage('Push Image') {
             steps {
-                echo 'Push Docker Image..'
+                echo 'Pushing Docker Image..'
             }
         }
         
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                echo 'Deploying Container....'
             }
         }
         
         stage('Test') {
             steps {
-                echo 'Testing..'
+                echo 'Testing Application..'
             }
         }
         
