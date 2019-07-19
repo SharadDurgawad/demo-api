@@ -3,13 +3,13 @@ pipeline {
 
     stages {
     
-        stage('Build') {
+        stage('Build Source') {
             steps {
                 echo 'Building..'
             }
         }
         
-        stage('Sonar') {
+        stage('Sonar Analysis') {
             steps {
                 echo 'Sonar Code Coverage..'
             }
@@ -27,15 +27,15 @@ pipeline {
             }
         }
         
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+            }
+        }
+        
+        stage('Test') {
+            steps {
+                echo 'Testing..'
             }
         }
         
